@@ -6,7 +6,7 @@ export default class API{
     //     const res = await axios.get(url);
     //     return res.data;
     // }
-    static async getAllPostQuantity(){
+    static async getAllPost(){
         const res = await axios.get(url);
         return res.data;
     }

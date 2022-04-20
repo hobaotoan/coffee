@@ -19,6 +19,7 @@ mongoose.connect(process.env.DB_URI,{
 .catch((e)=>console.log(e));
 
 app.use('/api/post',require('./routes/index'))
+app.use('/users',require('./routes/userRouter'))
 
 app.listen(port,()=>{
     console.log('Running on port 5000');

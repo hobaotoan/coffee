@@ -15,7 +15,7 @@
           </v-list-item-group>
       </v-list>
       <div style="position: absolute; bottom: 20px; margin-left: auto; margin-right: auto; left:0; right:0; text-align: center;">
-          <v-icon>fas fa-sign-out-alt</v-icon><br><span class="caption">Đăng xuất</span>
+          <v-icon @click="logout">fas fa-sign-out-alt</v-icon><br><span class="caption">Đăng xuất</span>
       </div>
   </v-navigation-drawer>
 </template>
@@ -26,14 +26,21 @@ data: () => ({
     selectedItem: 0,
     drawer: null,
     items: [
-        {icon: 'fas fa-home', text:'Trang chủ',link: "/"},
+        {icon: 'fas fa-home', text:'Trang chủ',link: "/home"},
         {icon: 'fas fa-hamburger', text:'Thêm ',link: "/add-post"},
         {icon: 'fas fa-history', text:'Giới thiệu',link: "/about"},
         // {icon: 'fas fa-wallet', text:'Wallet'},
         // {icon: 'fas fa-percent', text:'Promo'},
         // {icon: 'fas fa-cog', text:'Setting'},
     ],
-})
+}),
+methods:{
+    logout(){
+        window.localStorage.removeItem('token');
+        this.$router.push({ name: "login" });
+
+    }
+}
 }
 </script>
 

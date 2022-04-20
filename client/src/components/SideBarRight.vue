@@ -3,11 +3,11 @@
       <v-list subheader two-line class="mt-1">
           <v-list-item>
               <v-list-item-avatar rounded>
-                  <v-img src="https://cdn.vuetifyjs.com/images/lists/2.jpg"></v-img>
+                  <v-img @click="profile" src="https://cdn1.vectorstock.com/i/1000x1000/23/70/man-avatar-icon-flat-vector-19152370.jpg"></v-img>
               </v-list-item-avatar>
               <v-list-item-content>
-                  <v-list-item-subtitle>I'm a Cashier</v-list-item-subtitle>
-                  <v-list-item-title>Jelly Grande</v-list-item-title>
+                  <v-list-item-subtitle>Tôi là thu ngân</v-list-item-subtitle>
+                  <v-list-item-title>{{name}}</v-list-item-title>
               </v-list-item-content>
               <v-list-item-action>
                   <v-badge bordered overlap color="red" dot>
@@ -31,7 +31,7 @@
 
                   </v-list-item-subtitle>
               </v-list-item-content>
-              <v-list-item-action class="caption">{{ post.category }}</v-list-item-action>
+              <v-list-item-action class="caption">{{ post.category }}$</v-list-item-action>
           </v-list-item>
       </v-list>
       <v-toolbar color="rgba(0,0,0,0)" flat>
@@ -112,7 +112,7 @@
           </v-container>
       </v-item-group>
       <div class="mx-3 mt-2">
-          <v-btn color="#704232" block dark class="widthoutupercase">Im hóa đơn</v-btn>
+          <v-btn color="#704232" block dark class="widthoutupercase">In hóa đơn</v-btn>
       </div>
   </v-navigation-drawer>
 </template>
@@ -124,12 +124,22 @@ export default {
   data() {
     return {
       posts: [],
+      name:''
     };
   },
   async created() {
-    this.posts = await API.getAllPostQuantity();
+    this.posts = await API.getAllPost();
+    this.name =  JSON.parse(window.localStorage.getItem('token')).user.username
+  },
+    mounted() {
+    // if (localStorage.getItem('token')) {
+    //     this.name = JSON.parse(localStorage.getItem('token'));
+    // }
   },
   methods:{
+      profile(){
+          this.$router.push({ name: "profile" });
+      }
   }
 };
 </script>

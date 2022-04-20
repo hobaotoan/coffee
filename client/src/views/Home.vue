@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import API from "../api";
 import SideBar from "../components/SideBar";
 import Searching from "../components/Searching";

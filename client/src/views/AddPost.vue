@@ -16,14 +16,20 @@
               <v-text-field
                 label="Tên sản phẩm"
                 v-model="post.title"
-                prepend-icon="mdi-note"
+                prepend-icon="mdi-food-fork-drink"
                 :rules="rules"
               ></v-text-field>
-
+                      <v-select
+                      prepend-icon="mdi-sort-variant"
+          :items="items"
+          label="Loại sản phẩm"
+          :rules="rules"
+          v-model="post.group"
+        ></v-select>
               <v-text-field
                 label="Giá sản phẩm"
                 v-model="post.category"
-                prepend-icon="mdi-note"
+                prepend-icon="mdi-tag"
                 :rules="rules"
               ></v-text-field>
 
@@ -61,12 +67,13 @@ export default {
   data() {
     return {
       rules: [(value) => !!value || "This field is required"],
-
+      items: ['Đá Xay', 'Trà Nguyên Chất', 'Trà Sữa', 'Latte Series','Topping'],
       post: {
         title: "",
         category: "",
         content: "",
         image: "",
+        post:"",
       },
       image: "",
     };
@@ -84,6 +91,7 @@ export default {
       formData.append("image", this.image);
       formData.append("title", this.post.title);
       formData.append("category", this.post.category);
+      formData.append("group", this.post.group);
       formData.append("content", this.post.content);
       if (this.$refs.form.validate()) {
         const response = await API.addPost(formData);

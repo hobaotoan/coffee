@@ -21,7 +21,7 @@
                     <v-btn
                       color="success"
                       text
-                      :to="{ name: 'edit-post', params: { id: post._id } }"
+                      :to="{ name: 'edit-post' }"
                       >Chỉnh sửa</v-btn
                     >
                     <v-btn color="red" text @click="removePost(post._id)"
@@ -34,6 +34,7 @@
                 <h3>{{ post.title }}</h3>
               </v-card-subtitle>
               <v-card-text class="grey-text">
+                <p>{{ post.group }}</p>
                 <p>{{ post.content }}</p>
                 <p>{{ post.created }}</p>
               </v-card-text>

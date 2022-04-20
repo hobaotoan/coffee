@@ -2,6 +2,21 @@ const Post = require('../models/post');
 const fs = require('fs');
 
 module.exports = class API{
+
+
+    // static async createUser(req,res){
+    //     const user = req.body;
+    //     const imagename = req.file.filename;
+    //     user.image = imagename;
+    //     try{
+    //         await User.create(user);
+    //         res.status(200).json({message:'User created successfully!'});
+    //     }catch(err){
+    //         res.status(400).json({message:err.message});
+    //     }
+        
+    //  }
+
     static async fetchAllPost(req,res){
         try{
             const posts = await Post.find();
@@ -13,7 +28,7 @@ module.exports = class API{
     static async fetchPostByID(req,res){
         const id = req.params.id;
         try{
-            const post = await Post.findById({_id:id});
+            const post = await Post.findById(id);
             res.status(200).json(post);
         }catch(err){
             res.status(404).json({message:err.message});    
@@ -90,6 +105,22 @@ module.exports = class API{
         }catch(err){
             res.status(404).json({message:err.message});
         }
+    }
+    static async deleteAllPost(req,res){
+        try{
+            const post = await Post.deleteMany();
+            if(post.image){
+                try{
+                    fs.unlinkSync('./uploads/'+post.image);
+                }catch(err){
+                    console.log(err);
+                }  
+            }
+            res.status(200).json({message:'Delete post successfully!'});   
+        }catch(err){
+            res.status(404).json({message:err.message});
+        }
+        
     }
 }
 

@@ -7,11 +7,15 @@ import About from '../views/About.vue'
 import EditPost from '../views/EditPost.vue'
 import Post from '../views/Post.vue'
 import Test from '../views/Test.vue'
+import Login from '../views/Login.vue'
+import Signup from '../views/Signup.vue'
+import Profile from '../views/Profile.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
+    path: '/home',
     name: 'home',
     component: Home
   },
@@ -44,6 +48,21 @@ const routes = [
     path: '/test',
     name: 'test',
     component: Test
+  },
+  {
+    path: '/',
+    name: 'login',
+    component: Login
+  },
+  {
+    path: '/signup',
+    name: 'signup',
+    component: Signup
+  },
+  {
+    path: '/profile',
+    name: 'profile',
+    component: Profile
   },
 
 ]

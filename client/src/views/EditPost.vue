@@ -14,30 +14,30 @@
               enctype="multipart/form-data"
             >
               <v-text-field
-                label="Title"
+                label="Tên sản phẩm"
                 v-model="post.title"
-                prepend-icon="mdi-note"
+                prepend-icon="mdi-food-fork-drink"
                 :rules="rules"
               ></v-text-field>
+                                    <v-select
+                      prepend-icon="mdi-sort-variant"
+          :items="items"
+          label="Loại sản phẩm"
+          :rules="rules"
+          v-model="post.group"
+        ></v-select>
 
               <v-text-field
-                label="Content"
-                v-model="post.content"
-                prepend-icon="mdi-note"
-                :rules="rules"
-              ></v-text-field>
-
-              <v-text-field
-                label="Category"
+                label="Giá sản phẩm"
                 v-model="post.category"
-                prepend-icon="mdi-note"
+                prepend-icon="mdi-tag"
                 :rules="rules"
               ></v-text-field>
 
               <br />
 
               <v-textarea
-                label="Content"
+                label="Mô tả sản phẩm"
                 v-model="post.content"
                 prepend-icon="mdi-note-plus"
                 :rules="rules"
@@ -50,7 +50,7 @@
                 show-size
                 counters
                 multiple
-                label="Select Image"
+                label="Lựa chọn hình ảnh"
               ></v-file-input>
               <v-img :src="`/${post.image}`" width="120"></v-img>
 
@@ -73,14 +73,16 @@ export default {
   data() {
     return {
       rules: [(value) => !!value || "This field is required"],
-
+      items: ['Đá Xay', 'Trà Nguyên Chất', 'Trà Sữa', 'Latte Series','Topping'],
       post: {
         title: "",
 
         category: "",
         content: "",
+        group:"",
 
         image: "",
+
       },
       image: "",
     };
@@ -102,6 +104,7 @@ export default {
       formData.append("image", this.image);
 
       formData.append("title", this.post.title);
+      formData.append("group", this.post.group);
 
       formData.append("content", this.post.content);
       formData.append("old_image", this.post.image);

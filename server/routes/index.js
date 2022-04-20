@@ -16,8 +16,11 @@ let upload = multer({
     storage:storage,
 }).single("image");
 router.get('/',API.fetchAllPost);
+router.get('/groups/:group',API.fetchAllPostGroup);
 router.get('/:id',API.fetchPostByID);
 router.post('/',upload, API.createPost);
+// router.post('/user',upload, API.createUser);
 router.patch('/:id',upload, API.updatePost);
 router.delete('/:id',API.deletePost);
+router.delete('/deleteall',API.deleteAllPost);
 module.exports = router;
