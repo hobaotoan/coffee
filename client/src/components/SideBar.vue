@@ -1,7 +1,7 @@
 <template>
   <v-navigation-drawer v-model="drawer" app color="white" mini-variant mini-variant-width="90">
       <v-avatar class="d-block text-center mx-auto mt-4" size="40">
-          <v-icon color="#704232">fas fa-coffee</v-icon>
+          <v-icon color="#5D4037" size="33">emoji_food_beverage</v-icon>
       </v-avatar>
       <v-list-item-subtitle align="center" class="textlogo caption">lilCoffee</v-list-item-subtitle>
       <v-list flat class="mt-4">
@@ -48,7 +48,7 @@ methods:{
 .border {
     margin-left: 8px;
     margin-right: 8px;
-    background: #704232;
+    background: #5D4037;
     border-radius: 20px;
     text-decoration: none;
 }
@@ -59,7 +59,7 @@ methods:{
     color: white !important;
 }
 .textlogo{
-    color: #704232;
+    color: #5D4037;
     
 }
 </style>

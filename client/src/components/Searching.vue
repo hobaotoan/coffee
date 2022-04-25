@@ -1,10 +1,10 @@
 <template>
   <v-container>
     <v-toolbar color="rgba(0,0,0,0)" flat>
-      <v-toolbar-title class="mt-n3">Choose Category</v-toolbar-title>
+      <v-toolbar-title class="mt-n3">Lựa chọn loại nước uống</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-text-field
-        label="Search category or menu..."
+        label="Tìm kiếm tên hoặc loại nước uống"
         class="mt-5"
         color="brown"
         filled

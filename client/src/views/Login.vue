@@ -20,10 +20,10 @@
               @click:append="show1 = !show1"
             ></v-text-field>
 
-            <v-btn color="#3E2723" dark block tile class="mr-4" @click="login">ĐĂNG NHẬP</v-btn>
+            <v-btn color="brown darken-2" dark block tile class="mr-4" @click="login">ĐĂNG NHẬP</v-btn>
           </form>
         </v-col>
-        <v-col cols="6" md="6" class="rounded-bl-xl brown darken-4">
+        <v-col cols="6" md="6" class="rounded-bl-xl brown darken-2">
           <div style="text-align: center; padding: 150px 0">
             <v-card-text class="white--text">
               <h3 class="text-center">Bạn đã có tài khoản chưa?</h3>
@@ -62,13 +62,24 @@ export default {
   },
   methods: {
     async login() {
+
+
       let result = await axios.post("http://localhost:5000/users/login", {
         email: this.email,
         password: this.password,
       });
-
-      localStorage.setItem("token", JSON.stringify(result.data));
+      
+      if(result.status === 200){
+          localStorage.setItem("token", JSON.stringify(result.data));
       this.$router.push({ name: "home" });
+
+      }else{
+        console.log(result.data)
+      }
+        
+
+      // localStorage.setItem("token", JSON.stringify(result.data));
+      // this.$router.push({ name: "home" });
 
       // if(result.status == 200 && result.data.length>0){
       //     localStorage.setItem("user-info",JSON.stringify(result.data[0]))

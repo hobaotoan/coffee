@@ -25,10 +25,10 @@
               @click:append="show1 = !show1"
             ></v-text-field>
 
-            <v-btn color="#3E2723" dark block tile class="mr-4" @click="register">ĐĂNG KÍ</v-btn>
+            <v-btn color="#5D4037" dark block tile class="mr-4" @click="register">ĐĂNG KÍ</v-btn>
           </form>
         </v-col>
-        <v-col cols="6" md="6" class="rounded-bl-xl brown darken-4">
+        <v-col cols="6" md="6" class="rounded-bl-xl brown darken-2">
           <div style="text-align: center; padding: 150px 0">
             <v-card-text class="white--text">
               <h3 class="text-center">Bạn đã có tài khoản chưa?</h3>
@@ -68,7 +68,7 @@ export default {
   },
   methods: {
     async register() {
-      let result = await axios.post("http://localhost:5000/api/post/user", {
+      let result = await axios.post("http://localhost:5000/users/register", {
         username: this.username,
         email: this.email,
         password: this.password,

@@ -13,9 +13,9 @@
               <v-card-actions>
                 <v-row class="mt-1 mx-1">
                   <v-col sm="2">
-                    <v-btn small outlined color="light-green darken-4">{{
+                    <v-btn small outlined color="light-green darken-4">Chỉ {{
                       post.category
-                    }}$</v-btn>
+                    }} VND</v-btn>
                   </v-col>
                   <v-col sm="10" class="d-flex justify-end">
                     <v-btn

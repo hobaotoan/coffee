@@ -10,7 +10,7 @@ import Test from '../views/Test.vue'
 import Login from '../views/Login.vue'
 import Signup from '../views/Signup.vue'
 import Profile from '../views/Profile.vue'
-
+import Group from '../views/Smoothies.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -63,6 +63,11 @@ const routes = [
     path: '/profile',
     name: 'profile',
     component: Profile
+  },
+  {
+    path: '/:group',
+    name: 'group',
+    component: Group
   },
 
 ]

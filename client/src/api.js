@@ -14,8 +14,8 @@ export default class API{
         const res = await axios.get(urlAPI);
         return res.data;
     }
-    static async getAllPostGroup(){
-        const res = await axios.get(`${url}/${group}`);
+    static async getAllPostGroup(group){
+        const res = await axios.get(`${url}/groups/${group}`);
         return res.data;
     }
     static async getPostById(id){

@@ -36,7 +36,7 @@
             <v-card-actions>
               <v-row >
                 <v-col cols="12" sm="6" class="mt-1">
-                  <strong class="ml-3">Mood</strong><br />
+                  <strong class="ml-3">Trạng thái</strong><br />
                   <v-item-group mandatory class="mt-n1">
                     <v-container>
                       <v-row class="">
@@ -89,7 +89,7 @@
                   </v-item-group>
                 </v-col>
                 <v-col cols="12" sm="6" class="mt-1">
-                  <strong class="ml-3">Size</strong><br />
+                  <strong class="ml-3">Kích thước</strong><br />
                   <v-item-group mandatory class="mt-n1">
                     <v-container>
                       <v-row class="">
@@ -159,7 +159,7 @@
             <v-card-actions>
               <v-row>
                 <v-col cols="12" sm="6" class="mt-1">
-                  <strong class="ml-3">Sugar</strong><br />
+                  <strong class="ml-3">Đường</strong><br />
 
                   <v-item-group mandatory class="mt-n1">
                     <v-container>
@@ -244,7 +244,7 @@
                   </v-item-group>
                 </v-col>
                 <v-col cols="12" sm="6" class="mt-1">
-                  <strong class="ml-3">Ice</strong><br />
+                  <strong class="ml-3">Đá</strong><br />
                   <v-item-group mandatory class="mt-n1">
                     <v-container>
                       <v-row class="">
@@ -330,7 +330,7 @@
               </v-row>
             </v-card-actions>
             <v-card-actions>
-              <v-btn color="#704232" block dark class="withoutupercase mb-2"
+              <v-btn color="#5D4037" block dark class="withoutupercase mb-2"
                 >Thêm vào hóa đơn</v-btn
               >
             </v-card-actions>

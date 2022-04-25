@@ -1,6 +1,6 @@
-<template>
-  <v-navigation-drawer app color="white" right width="290">
-      <v-list subheader two-line class="mt-1">
+<template >
+  <v-navigation-drawer app color="white" right width="290"  >
+      <v-list subheader two-line class="mt-1" >
           <v-list-item>
               <v-list-item-avatar rounded>
                   <v-img @click="profile" src="https://cdn1.vectorstock.com/i/1000x1000/23/70/man-avatar-icon-flat-vector-19152370.jpg"></v-img>
@@ -10,41 +10,38 @@
                   <v-list-item-title>{{name}}</v-list-item-title>
               </v-list-item-content>
               <v-list-item-action>
-                  <v-badge bordered overlap color="red" dot>
-                      <v-icon>far fa-bell</v-icon>
-                  </v-badge>
               </v-list-item-action>
           </v-list-item>
       </v-list>
-      <strong class="ml-3">Bills</strong>
-      <v-list subheader two-line class="mt-1" v-for="post in posts" :key="post._id">
+      <strong class="ml-3">Hóa đơn</strong>
+      <v-list subheader two-line class="mt-1" v-for="post in posts" :key="post._id" >
           <v-list-item>
               <v-list-item-avatar rounded color="grey lighten-4">
                   <v-img :src="`/${post.image}`"></v-img>
               </v-list-item-avatar>
               <v-list-item-content>
                   <v-list-item-title class="subtitle-2">{{ post.title }}</v-list-item-title>
-                  <v-list-item-subtitle>X1
-                      <v-btn plain color="#704232" small>Notes
+                  <v-list-item-subtitle>X0
+                      <v-btn plain color="#704232" small>
                           <v-icon right>mdi-pencil</v-icon>
                       </v-btn>
 
                   </v-list-item-subtitle>
               </v-list-item-content>
-              <v-list-item-action class="caption">{{ post.category }}$</v-list-item-action>
+              <v-list-item-action class="caption">{{ post.category }} VND</v-list-item-action>
           </v-list-item>
       </v-list>
       <v-toolbar color="rgba(0,0,0,0)" flat>
-          <strong>Subtotal</strong><v-spacer></v-spacer><strong>$18.31</strong>
+          <strong>Phụ thu</strong><v-spacer></v-spacer><strong>XXX VND</strong>
       </v-toolbar>
       <v-toolbar color="rgba(0,0,0,0)" flat class="mt-n6">
-          <span>Tax(10%)</span><v-spacer></v-spacer><span>$1.831</span>
+          <span>Thuế(10%)</span><v-spacer></v-spacer><span>XXX VND</span>
       </v-toolbar>
       <v-divider class="mx-4"></v-divider>
       <v-toolbar color="rgba(0,0,0,0)" flat>
-          <strong>Total</strong><v-spacer></v-spacer><strong>$20.141</strong>
+          <strong>Tổng</strong><v-spacer></v-spacer><strong>XXX VND</strong>
       </v-toolbar>
-      <strong class="ml-5">Payment Method</strong>
+      <strong class="ml-5">Phương thức thanh toán</strong>
       <v-item-group mandatory class="mt-n1">
           <v-container>
               <v-row justify="center">
@@ -112,7 +109,7 @@
           </v-container>
       </v-item-group>
       <div class="mx-3 mt-2">
-          <v-btn color="#704232" block dark class="widthoutupercase">In hóa đơn</v-btn>
+          <v-btn color="#5D4037" block dark class="widthoutupercase">In hóa đơn</v-btn>
       </div>
   </v-navigation-drawer>
 </template>
@@ -146,7 +143,7 @@ export default {
 
 <style>
     .v-card.borderme{
-        border:2px solid #704232 !important;
+        border:2px solid #5D4037 !important;
     }
     .col-12 {
         padding: 5px !important;

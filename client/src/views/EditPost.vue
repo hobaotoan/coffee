@@ -17,7 +17,6 @@
                 label="Tên sản phẩm"
                 v-model="post.title"
                 prepend-icon="mdi-food-fork-drink"
-                :rules="rules"
               ></v-text-field>
                                     <v-select
                       prepend-icon="mdi-sort-variant"
@@ -31,7 +30,6 @@
                 label="Giá sản phẩm"
                 v-model="post.category"
                 prepend-icon="mdi-tag"
-                :rules="rules"
               ></v-text-field>
 
               <br />
@@ -45,7 +43,6 @@
               </v-textarea>
 
               <v-file-input
-                :rules="rules"
                 @change="selectFile"
                 show-size
                 counters
@@ -102,10 +99,9 @@ export default {
     async updateForm() {
       const formData = new FormData();
       formData.append("image", this.image);
-
       formData.append("title", this.post.title);
       formData.append("group", this.post.group);
-
+      formData.append("category", this.post.category);
       formData.append("content", this.post.content);
       formData.append("old_image", this.post.image);
       if (this.$refs.form.validate()) {

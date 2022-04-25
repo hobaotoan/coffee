@@ -9,7 +9,7 @@
             <v-card-title>Name: {{name}}</v-card-title>
             <v-card-title>Email: {{email}}</v-card-title>
         </v-col>
-        <v-col cols="6" md="6" class="rounded-bl-xl brown darken-4">
+        <v-col cols="6" md="6" class="rounded-bl-xl brown darken-2">
           <div style="text-align: center; padding: 225px 0">
             <h1 class="text-center white--text" >Trang cá nhân</h1>
             <v-card-text class="white--text">
